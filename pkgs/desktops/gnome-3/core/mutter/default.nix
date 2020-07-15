@@ -111,12 +111,6 @@ stdenv.mkDerivation rec {
       sha256 = "0imy2j8af9477jliwdq4jc40yw1cifsjjf196gnmwxr9rkj0hbrd";
     })
 
-    # gnome-3-34 2020-04-24
-    (fetchpatch {
-      url = "https://github.com/GNOME/mutter/compare/3.34.5..3bafd234248fdcd84bc62fef5e31c29fbb613909.patch";
-      sha256 = "1a7krbdfmvx204p6av44rbp4ckp6ddg1mms8wkixxh2p871zq1pi";
-    })
-
     # Drop inheritable cap_sys_nice, to prevent the ambient set from leaking
     # from mutter/gnome-shell, see https://github.com/NixOS/nixpkgs/issues/71381
     ./drop-inheritable.patch
